@@ -37,4 +37,6 @@
     <string-array name="SpinnerMethod"> <item>Electricity</item> <item>Load</item> <item>Load (advanced)</item> </string-array>
     <string name="CinquiemePartieQuatriemeElement">Average consumption (W)</string>
 
+    <string name="BoutonLancer">LANCER</string>
+
 </resources>
