@@ -1,13 +1,72 @@
 package fr.univpau.projetboavitz;
 
 import android.app.Activity;
+import android.content.Context;
 import android.util.Log;
 import android.widget.*;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.List;
 
 public class DataCollected extends Activity {
 
     void afficher(){
         Log.i("Tag", "Faire fonctionner la fonction");
+    }
+
+    void JSON_creation(MainActivity context) throws IOException, JSONException {
+        JSONObject JsonModel = new JSONObject();
+        JSONObject JsonConfig = new JSONObject();
+        JSONObject JsonUsage = new JSONObject();
+
+        JSONObject SousJsonCPU = new JSONObject();
+        JSONObject SousJsonRAM = new JSONObject();
+        JSONArray SousJsonDISK = new JSONArray();
+
+        JSONObject MainJson = new JSONObject();
+
+        JsonModel.put("type", "rack");
+        MainJson.put("model", JsonModel);
+
+        SousJsonCPU.put("units", 2);
+        SousJsonCPU.put("name", "intel xeon gold 6134");
+
+        SousJsonRAM.put("units", 12);
+        SousJsonRAM.put("capacity", 32);
+
+        SousJsonDISK.put(new JSONObject().put("units", 1));
+        SousJsonDISK.put(new JSONObject().put("type", "ssd"));
+        SousJsonDISK.put(new JSONObject().put("capacity", 400));
+        SousJsonDISK.put(new JSONObject().put("density", 50.6));
+
+        JsonConfig.put("cpu", SousJsonCPU);
+        JsonConfig.put("ram", SousJsonRAM);
+        JsonConfig.put("disk", SousJsonDISK);
+
+        MainJson.put("configuration", JsonConfig);
+
+        JsonUsage.put("years_use_time", 1);
+        JsonUsage.put("days_use_time", 1);
+        JsonUsage.put("hours_use_time", 1);
+        JsonUsage.put("hours_electrical_consumption", 300);
+        JsonUsage.put("usage_location", "FRA");
+
+        MainJson.put("usage", JsonUsage);
+
+
+        String Rendu = MainJson.toString();
+
+        FileOutputStream fos = context.openFileOutput("jsonfile", Context.MODE_PRIVATE);
+        fos.write(Rendu.getBytes());
+        fos.close();
+
+        Log.d("JSON" , Rendu);
     }
 
     //SERVER CONFIG
