@@ -20,6 +20,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".DataCollected"
+            android:label="je suis la classe data"
+            android:exported="true">
+        </activity>
+
+        <activity
+            android:name=".Graphe"
+            android:label="je suis la classe graphe"
+            android:exported="true">
+        </activity>
+
     </application>
 
 </manifest>

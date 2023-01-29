@@ -45,11 +45,12 @@
                     android:text="@string/PremierePartiePremierElement" />
 
                 <EditText
-                    android:id="@+id/editTextNumber3"
+                    android:id="@+id/editTextcpuquantity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:inputType="number" />
+                    android:inputType="number"
+                    android:hint="1"/>
             </LinearLayout>
 
             <LinearLayout
@@ -65,7 +66,7 @@
                     android:text="@string/PremierePartieDeuxiemeElement" />
 
                 <EditText
-                    android:id="@+id/editTextNumber2"
+                    android:id="@+id/editTextcpucore"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -85,7 +86,7 @@
                     android:text="@string/PremierePartieTroisiemeElement" />
 
                 <EditText
-                    android:id="@+id/editTextNumber"
+                    android:id="@+id/editTextcputdp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -105,7 +106,7 @@
                     android:text="@string/PremierePartieQuatriemeElement" />
 
                 <Spinner
-                    android:id="@+id/spinner"
+                    android:id="@+id/spinnercpuarchitecture"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:entries="@array/SpinnerArchitecture" />
@@ -137,7 +138,7 @@
                     android:text="@string/DeuxiemePartiePremierElement" />
 
                 <EditText
-                    android:id="@+id/editTextNumber4"
+                    android:id="@+id/editTextramquantity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -157,7 +158,7 @@
                     android:text="@string/DeuxiemePartieDeuxiemeElement" />
 
                 <EditText
-                    android:id="@+id/editTextNumber5"
+                    android:id="@+id/editTextramcapacity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -178,7 +179,7 @@
                     android:text="@string/DeuxiemePartieTroisiemeElement" />
 
                 <Spinner
-                    android:id="@+id/spinner2"
+                    android:id="@+id/spinnerrammanufacturer"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:entries="@array/SpinnerManufacturerRAM" />
@@ -210,7 +211,7 @@
                     android:text="@string/TroisiemePartiePremierElement" />
 
                 <EditText
-                    android:id="@+id/editTextNumber6"
+                    android:id="@+id/editTextssdquantity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -230,7 +231,7 @@
                     android:text="@string/TroisiemePartieDeuxiemeElement" />
 
                 <EditText
-                    android:id="@+id/editTextNumber7"
+                    android:id="@+id/editTextssdcapacity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -251,7 +252,7 @@
                     android:text="@string/TroisiemePartieTroisiemeElement" />
 
                 <Spinner
-                    android:id="@+id/spinnerManufacturer"
+                    android:id="@+id/spinnerssdmanufacturer"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:entries="@array/SpinnerManufacturerSSD" />
@@ -283,7 +284,7 @@
                     android:text="@string/QuatriemePartiePremierElement" />
 
                 <EditText
-                    android:id="@+id/editTextNumber8"
+                    android:id="@+id/editTextothershdd"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -303,7 +304,7 @@
                     android:text="@string/QuatriemePartieDeuxiemeElement" />
 
                 <EditText
-                    android:id="@+id/editTextNumber9"
+                    android:id="@+id/editTextothersserver"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -324,7 +325,7 @@
                     android:text="@string/QuatriemePartieTroisiemeElement" />
 
                 <EditText
-                    android:id="@+id/editTextNumber10"
+                    android:id="@+id/editTextotherspsu"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -365,7 +366,7 @@
                     android:text="@string/CinquiemePartiePremierElement" />
 
                 <Spinner
-                    android:id="@+id/spinnerLocalisation"
+                    android:id="@+id/spinnerusagelocalisation"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:entries="@array/SpinnerLocalisation" />
@@ -383,7 +384,7 @@
                     android:text="@string/CinquiemePartieDeuxiemeElement" />
 
                 <EditText
-                    android:id="@+id/editTextLifesp"
+                    android:id="@+id/editTextusagelifespan"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -408,7 +409,7 @@
                     android:text="@string/CinquiemePartieTroisiemeElement" />
 
                 <Spinner
-                    android:id="@+id/spinnerMeth"
+                    android:id="@+id/spinnerusagemethod"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:entries="@array/SpinnerMethod" />
@@ -426,7 +427,7 @@
                     android:text="@string/CinquiemePartieQuatriemeElement" />
 
                 <EditText
-                    android:id="@+id/editTextAv"
+                    android:id="@+id/editTextusageaverage"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -440,5 +441,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/BoutonLancer" />
+
+    <Button
+        android:id="@+id/buttonGraphes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/BoutonGraphe" />
+
+
 
 </LinearLayout>

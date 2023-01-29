@@ -39,4 +39,9 @@
 
     <string name="BoutonLancer">LANCER</string>
 
+
+    <string name="ContenuGraphe">Ici s\'affichera les différents graphes</string>
+    <string name="BoutonGraphe">GRAPHIQUES</string>
+    <string name="BoutonRetour">RETOUR</string>
+
 </resources>
