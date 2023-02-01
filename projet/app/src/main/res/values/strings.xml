@@ -14,17 +14,18 @@
     <string name="DeuxiemePartiePremierElement">Quantity</string>
     <string name="DeuxiemePartieDeuxiemeElement">Capacity (GB)</string>
     <string name="DeuxiemePartieTroisiemeElement">Manufacturer</string>
-    <string-array name="SpinnerManufacturerRAM"> <item>Samsung</item> <item>SK hynix</item> <item>Micron</item></string-array>
+    <string-array name="SpinnerManufacturerRAM"> <item>samsung</item> <item>SK hynix</item> <item>micron</item></string-array>
 
     <string name="TroisiemePartieTroisiemeSousTitre">SSD</string>
     <string name="TroisiemePartiePremierElement">Quantity</string>
     <string name="TroisiemePartieDeuxiemeElement">Capacity (GB)</string>
     <string name="TroisiemePartieTroisiemeElement">Manufacturer</string>
-    <string-array name="SpinnerManufacturerSSD"> <item>Micron</item> <item>Toshiba</item> <item>Samsung</item></string-array>
+    <string-array name="SpinnerManufacturerSSD"> <item>micron</item> <item>toshiba</item> <item>samsung</item></string-array>
 
 
     <string name="QuatriemePartieQuatriemeSousTitre">Others</string>
     <string name="QuatriemePartiePremierElement">HDD Quantity</string>
+    <string-array name="SpinnerOthersServer"> <item>rack</item> <item>blade</item></string-array>
     <string name="QuatriemePartieDeuxiemeElement">Server type</string>
     <string name="QuatriemePartieTroisiemeElement">PSU quantity</string>
 
@@ -34,7 +35,7 @@
     <string-array name="SpinnerLocalisation"> <item>0-Global</item> <item>1-Albanie</item></string-array>
     <string name="CinquiemePartieDeuxiemeElement">Lifespan</string>
     <string name="CinquiemePartieTroisiemeElement">Method</string>
-    <string-array name="SpinnerMethod"> <item>Electricity</item> <item>Load</item> <item>Load (advanced)</item> </string-array>
+    <string-array name="SpinnerMethod"> <item>electricity</item> <item>load</item> <item>load (advanced)</item> </string-array>
     <string name="CinquiemePartieQuatriemeElement">Average consumption (W)</string>
 
     <string name="BoutonLancer">LANCER</string>

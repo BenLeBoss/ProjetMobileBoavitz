@@ -303,12 +303,11 @@
                     android:layout_height="wrap_content"
                     android:text="@string/QuatriemePartieDeuxiemeElement" />
 
-                <EditText
-                    android:id="@+id/editTextothersserver"
-                    android:layout_width="wrap_content"
+                <Spinner
+                    android:id="@+id/spinnersothersserver"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="number" />
+                    android:entries="@array/SpinnerOthersServer" />
             </LinearLayout>
 
 

@@ -2,21 +2,23 @@ package fr.univpau.projetboavitz;
 
 import android.app.Activity;
 import android.content.Context;
-import android.os.Bundle;
+import android.os.NetworkOnMainThreadException;
 import android.util.Log;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-
-import androidx.annotation.Nullable;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.BufferedReader;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.lang.reflect.Array;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 
 public class DataCollected extends Activity {
@@ -30,7 +32,7 @@ public class DataCollected extends Activity {
         Log.i("Tag", "Faire fonctionner la fonction");
     }
 
-    void JSON_creation(MainActivity context) throws IOException, JSONException {
+    String JSON_creation(MainActivity context, String[] Arr_conf_CPU, String[] Arr_conf_RAM, String[] Arr_conf_SSD, String[] Arr_conf_Others, String[] Arr_Usage) throws IOException, JSONException {
         JSONObject JsonModel = new JSONObject();
         JSONObject JsonConfig = new JSONObject();
         JSONObject JsonUsage = new JSONObject();
@@ -46,31 +48,31 @@ public class DataCollected extends Activity {
 
         JSONObject MainJson = new JSONObject();
 
-        JsonModel.put("type", "rack");
+        JsonModel.put("type", Arr_conf_Others[1]);
         MainJson.put("model", JsonModel);
 
-        SousJsonCPU.put("core_units", 12);
-        SousJsonCPU.put("units", 2);
-        SousJsonCPU.put("family", "skylake");
+        SousJsonCPU.put("core_units", Integer.parseInt(Arr_conf_CPU[1]));
+        SousJsonCPU.put("units", Integer.parseInt(Arr_conf_CPU[0]));
+        SousJsonCPU.put("family", Arr_conf_CPU[3]);
 
-        SousJsonRAM.put("units", 12);
-        SousJsonRAM.put("capacity", 8);
-        SousJsonRAM.put("manufacturer", "samsung");
+        SousJsonRAM.put("units", Integer.parseInt(Arr_conf_RAM[0]));
+        SousJsonRAM.put("capacity", Integer.parseInt(Arr_conf_RAM[1]));
+        SousJsonRAM.put("manufacturer", Arr_conf_RAM[2]);
         SousJsonArrayRAM.put(SousJsonRAM);
 
 
-        SousJsonArray1Disk.put("units", 1);
-        SousJsonArray1Disk.put("type", "ssd");
-        SousJsonArray1Disk.put("capacity", 400);
-        SousJsonArray1Disk.put("manufacturer", "Toshiba");
+        SousJsonArray1Disk.put("units", Integer.parseInt(Arr_conf_SSD[0]));
+        SousJsonArray1Disk.put("type", "SSD");
+        SousJsonArray1Disk.put("capacity", Integer.parseInt(Arr_conf_SSD[1]));
+        SousJsonArray1Disk.put("manufacturer", Arr_conf_SSD[2]);
         SousJsonDISK.put(SousJsonArray1Disk);
 
-        SousJsonArray2Disk.put("units", 2);
+        SousJsonArray2Disk.put("units", Integer.parseInt(Arr_conf_Others[0]));
         SousJsonArray2Disk.put("type", "HDD");
         SousJsonDISK.put(SousJsonArray2Disk);
 
-        SousJsonPowerSupply.put("units", 2);
-        SousJsonPowerSupply.put("type", "HDD");
+        SousJsonPowerSupply.put("units", Arr_conf_Others[2]);
+        SousJsonPowerSupply.put("unit_weight", 4);
 
         JsonConfig.put("cpu", SousJsonCPU);
         JsonConfig.put("ram", SousJsonArrayRAM);
@@ -79,10 +81,11 @@ public class DataCollected extends Activity {
 
         MainJson.put("configuration", JsonConfig);
 
+        //a compléter pour les pays avec les initiales (origine)
         JsonUsage.put("years_use_time", 1);
         JsonUsage.put("days_use_time", 1);
         JsonUsage.put("hours_use_time", 1);
-        JsonUsage.put("hours_electrical_consumption", 300);
+        JsonUsage.put("hours_electrical_consumption", Integer.parseInt(Arr_Usage[3]));
         JsonUsage.put("usage_location", "FRA");
 
         MainJson.put("usage", JsonUsage);
@@ -95,6 +98,8 @@ public class DataCollected extends Activity {
         fos.close();
 
         Log.d("JSON" , Rendu);
+
+        return Rendu;
     }
 
 
@@ -185,11 +190,9 @@ public class DataCollected extends Activity {
             Array_values[0]=String.valueOf(Current_OthersHdd);
         }
 
-        EditText EditText_OthersServer = (EditText) this.activity.findViewById(R.id.editTextothersserver);
-        if (!EditText_OthersServer.getText().toString().isEmpty()) {
-            int Current_OthersServer = Integer.parseInt(EditText_OthersServer.getText().toString());
-            Array_values[1]=String.valueOf(Current_OthersServer);
-        }
+        Spinner Spinner_OthersServer = (Spinner) this.activity.findViewById(R.id.spinnersothersserver);
+        String Current_Value_Spinner_OthersServer = Spinner_OthersServer.getSelectedItem().toString();
+        Array_values[1]= Current_Value_Spinner_OthersServer;
 
         EditText EditText_OthersPsu = (EditText) this.activity.findViewById(R.id.editTextotherspsu);
         if (!EditText_OthersPsu.getText().toString().isEmpty()) {
@@ -210,7 +213,7 @@ public class DataCollected extends Activity {
 
         EditText EditText_UsageLifespan = (EditText) this.activity.findViewById(R.id.editTextusagelifespan);
         if (!EditText_UsageLifespan.getText().toString().isEmpty()) {
-            double Current_UsageLifespan = Double.parseDouble(EditText_UsageLifespan.getText().toString());
+            int Current_UsageLifespan = Integer.parseInt(EditText_UsageLifespan.getText().toString());
             Array_values[1] = String.valueOf(Current_UsageLifespan);
         }
 
@@ -220,7 +223,7 @@ public class DataCollected extends Activity {
 
         EditText EditText_UsageAverage = (EditText) this.activity.findViewById(R.id.editTextusageaverage);
         if (!EditText_UsageAverage.getText().toString().isEmpty()) {
-            double Current_UsageAverage = Double.parseDouble(EditText_UsageAverage.getText().toString());
+            int Current_UsageAverage = Integer.parseInt(EditText_UsageAverage.getText().toString());
             Array_values[3] = String.valueOf(Current_UsageAverage);
         }
 
