@@ -24,10 +24,10 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
+import java.util.concurrent.ExecutionException;
 
 public class MainActivity extends AppCompatActivity {
 
-    public TextInput TextInput;
     String JsonRep;
     String JsonDataCollected;
 
@@ -35,8 +35,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity_main);
         super.onCreate(savedInstanceState);
-
-
 
         Button Bouton_Lancer = (Button) findViewById(R.id.boutonLancer);
         Bouton_Lancer.setOnClickListener(new View.OnClickListener() {
@@ -77,8 +75,17 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 requetePost req = new requetePost();
-                req.execute(JsonDataCollected);
+
+                try {
+                    JsonRep = req.execute(JsonDataCollected).get();
+                } catch (ExecutionException e) {
+                    throw new RuntimeException(e);
+                    //Toast.makeText(getApplicationContext(), "Erreur get JSON", Toast.LENGTH_SHORT).show();
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
                 System.out.println("Sortie de l'api : " + JsonRep);
+
 
             }
         });
@@ -86,15 +93,21 @@ public class MainActivity extends AppCompatActivity {
         Button Bouton_Graphe = (Button) findViewById(R.id.buttonGraphes);
         Bouton_Graphe.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                String pif = "aled";
-                Intent intent = new Intent(MainActivity.this, Graphe.class);
-                intent.putExtra("id_value", pif);
-                startActivity(intent);
+
+                go_to_Graph();
             }
         });
 
         String pif_reçu = getIntent().getStringExtra("2");
 
+    }
+
+    void go_to_Graph (){
+        //String pif = "aled";
+        Intent intent = new Intent(MainActivity.this, Graphe.class);
+        intent.putExtra("id_value", JsonRep);
+        System.out.println("JsonRep dans le main : " + intent.getStringExtra("id_value"));
+        startActivity(intent);
     }
 /*
     @Override
@@ -173,7 +186,8 @@ public class MainActivity extends AppCompatActivity {
                     }
                     response.append(responseLine.trim());
                 }
-                JsonRep = response.toString();
+                //JsonRep = response.toString();
+
                 return response.toString();
             } catch (UnsupportedEncodingException e) {
                 throw new RuntimeException(e);
