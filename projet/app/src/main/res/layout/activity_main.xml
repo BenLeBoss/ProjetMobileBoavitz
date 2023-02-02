@@ -50,7 +50,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:inputType="number"
-                    android:hint="1"/>
+                    android:text="@string/Cpu_Quantity"/>
             </LinearLayout>
 
             <LinearLayout
@@ -70,7 +70,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:inputType="number" />
+                    android:inputType="number"
+                    android:text="@string/Cpu_CoreUnits"/>
             </LinearLayout>
 
             <LinearLayout
@@ -90,7 +91,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:inputType="number" />
+                    android:inputType="number"
+                    android:text="@string/Cpu_TDP"/>
             </LinearLayout>
 
             <LinearLayout
@@ -142,7 +144,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:inputType="number" />
+                    android:inputType="number"
+                    android:text="@string/RAM_Quantity"/>
             </LinearLayout>
 
             <LinearLayout
@@ -162,7 +165,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:inputType="number" />
+                    android:inputType="number"
+                    android:text="@string/RAM_Capacity"/>
             </LinearLayout>
 
 
@@ -215,7 +219,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:inputType="number" />
+                    android:inputType="number"
+                    android:text="@string/SSD_Quantity"/>
             </LinearLayout>
 
             <LinearLayout
@@ -235,7 +240,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:inputType="number" />
+                    android:inputType="number"
+                    android:text="@string/SSD_Capacity"/>
             </LinearLayout>
 
 
@@ -288,7 +294,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:inputType="number" />
+                    android:inputType="number"
+                    android:text="@string/Other_Quantity"/>
             </LinearLayout>
 
             <LinearLayout
@@ -328,7 +335,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:inputType="number" />
+                    android:inputType="number"
+                    android:text="@string/PSU_Quantity"/>
 
             </LinearLayout>
         </LinearLayout>
@@ -387,7 +395,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:inputType="number" />
+                    android:inputType="number"
+                    android:text="@string/Text_Lifespan"/>
             </LinearLayout>
         </LinearLayout>
         <LinearLayout
@@ -430,7 +439,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:inputType="number" />
+                    android:inputType="number"
+                    android:text="@string/Avg_consumption"/>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

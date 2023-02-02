@@ -8,6 +8,10 @@ import android.widget.Button;
 
 import androidx.annotation.Nullable;
 
+import com.github.mikephil.charting.charts.BarChart;
+
+import java.util.ArrayList;
+
 public class Graphe extends Activity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -25,4 +29,26 @@ public class Graphe extends Activity {
             }
         });
     }
+    BarChart chartGlobalWarning;
+    BarChart chartPrimaryEnergy;
+    BarChart chartRessExhausted;
+    ArrayList<BarChart> barChartList = new ArrayList<>();
+    private void setupCharts(){
+
+
+
+        //Initialisation des graphiques
+        chartGlobalWarning = findViewById(R.id.graphe_global);
+        chartPrimaryEnergy = findViewById(R.id.graphe_primary);
+        chartRessExhausted = findViewById(R.id.graphe_abiotic);
+
+        //Ajout des graphiques à la liste
+        barChartList.add(chartGlobalWarning);
+        barChartList.add(chartPrimaryEnergy);
+        barChartList.add(chartRessExhausted);
+
+    }
+
+
+
 }

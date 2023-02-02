@@ -45,4 +45,19 @@
     <string name="BoutonGraphe">GRAPHIQUES</string>
     <string name="BoutonRetour">RETOUR</string>
 
+    <string name="Cpu_Quantity">2</string>
+    <string name="Cpu_CoreUnits">16</string>
+    <string name="Cpu_TDP">150</string>
+
+    <string name="RAM_Quantity">4</string>
+    <string name="RAM_Capacity">32</string>
+
+    <string name="SSD_Quantity">4</string>
+    <string name="SSD_Capacity">1000</string>
+
+    <string name="Other_Quantity">2</string>
+    <string name="PSU_Quantity">2</string>
+    <string name="Text_Lifespan">4</string>
+    <string name="Avg_consumption">150</string>
+
 </resources>

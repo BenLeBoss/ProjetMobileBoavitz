@@ -27,6 +27,7 @@ import java.net.URL;
 
 public class MainActivity extends AppCompatActivity {
 
+    public TextInput TextInput;
     String JsonRep;
     String JsonDataCollected;
 
@@ -34,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity_main);
         super.onCreate(savedInstanceState);
+
+
 
         Button Bouton_Lancer = (Button) findViewById(R.id.boutonLancer);
         Bouton_Lancer.setOnClickListener(new View.OnClickListener() {
@@ -76,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
                 requetePost req = new requetePost();
                 req.execute(JsonDataCollected);
                 System.out.println("Sortie de l'api : " + JsonRep);
+
             }
         });
 
