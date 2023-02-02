@@ -1,0 +1,63 @@
+<resources>
+    <string name="app_name">ProjetBoavitz</string>
+    <string name="PremierTitre">Server configuration</string>
+
+    <string name="PremierePartiePremierSousTitre">CPU</string>
+    <string name="PremierePartiePremierElement">Quantity</string>
+    <string name="PremierePartieDeuxiemeElement">Core units</string>
+    <string name="PremierePartieTroisiemeElement">TDP (Watt)</string>
+    <string name="PremierePartieQuatriemeElement">Architecture</string>
+    <string-array name="SpinnerArchitecture"> <item>skylake</item> <item>cofee lake</item> <item>broadwell</item> <item>haswell</item> <item>ivy bridge</item> <item>sandy bridge</item> <item>ice lake</item> <item>kaby lake</item> <item>zen2</item> <item>zen3</item> <item>graviton2</item>  </string-array>
+
+
+    <string name="DeuxiemePartieDeuxiemeSousTitre">RAM</string>
+    <string name="DeuxiemePartiePremierElement">Quantity</string>
+    <string name="DeuxiemePartieDeuxiemeElement">Capacity (GB)</string>
+    <string name="DeuxiemePartieTroisiemeElement">Manufacturer</string>
+    <string-array name="SpinnerManufacturerRAM"> <item>samsung</item> <item>SK hynix</item> <item>micron</item></string-array>
+
+    <string name="TroisiemePartieTroisiemeSousTitre">SSD</string>
+    <string name="TroisiemePartiePremierElement">Quantity</string>
+    <string name="TroisiemePartieDeuxiemeElement">Capacity (GB)</string>
+    <string name="TroisiemePartieTroisiemeElement">Manufacturer</string>
+    <string-array name="SpinnerManufacturerSSD"> <item>micron</item> <item>toshiba</item> <item>samsung</item></string-array>
+
+
+    <string name="QuatriemePartieQuatriemeSousTitre">Others</string>
+    <string name="QuatriemePartiePremierElement">HDD Quantity</string>
+    <string-array name="SpinnerOthersServer"> <item>rack</item> <item>blade</item></string-array>
+    <string name="QuatriemePartieDeuxiemeElement">Server type</string>
+    <string name="QuatriemePartieTroisiemeElement">PSU quantity</string>
+
+
+    <string name="DeuxiemeTitre">Usage</string>
+    <string name="CinquiemePartiePremierElement">Localisation</string>
+    <string-array name="SpinnerLocalisation"> <item>0-Global</item> <item>1-Albanie</item></string-array>
+    <string name="CinquiemePartieDeuxiemeElement">Lifespan</string>
+    <string name="CinquiemePartieTroisiemeElement">Method</string>
+    <string-array name="SpinnerMethod"> <item>electricity</item> <item>load</item> <item>load (advanced)</item> </string-array>
+    <string name="CinquiemePartieQuatriemeElement">Average consumption (W)</string>
+
+    <string name="BoutonLancer">LANCER</string>
+
+
+    <string name="ContenuGraphe">Ici s\'affichera les différents graphes</string>
+    <string name="BoutonGraphe">GRAPHIQUES</string>
+    <string name="BoutonRetour">RETOUR</string>
+
+    <string name="Cpu_Quantity">2</string>
+    <string name="Cpu_CoreUnits">16</string>
+    <string name="Cpu_TDP">150</string>
+
+    <string name="RAM_Quantity">4</string>
+    <string name="RAM_Capacity">32</string>
+
+    <string name="SSD_Quantity">4</string>
+    <string name="SSD_Capacity">1000</string>
+
+    <string name="Other_Quantity">2</string>
+    <string name="PSU_Quantity">2</string>
+    <string name="Text_Lifespan">4</string>
+    <string name="Avg_consumption">150</string>
+
+</resources>
