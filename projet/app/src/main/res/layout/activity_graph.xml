@@ -8,17 +8,26 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="213dp"
+        android:layout_height="250sp"
         android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textViewMul"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:text="Multicritera impacts during lifespan" />
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textStyle="bold"
             android:text="Global Warming Potential (kgCO2eq)" />
 
         <TextView
-            android:id="@+id/textView21"
+            android:id="@+id/textViewGwp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView" />
@@ -29,10 +38,10 @@
             android:layout_height="wrap_content"
             android:text="Evaluates the effect on global warming" />
 
-        <com.github.mikephil.charting.charts.HorizontalBarChart
+        <com.github.mikephil.charting.charts.PieChart
             android:id="@+id/graphe_global"
             android:layout_width="match_parent"
-            android:layout_height="143dp" />
+            android:layout_height="150sp" />
 
     </LinearLayout>
 
@@ -45,10 +54,11 @@
             android:id="@+id/textView23"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textStyle="bold"
             android:text="Primary energy (MJ)" />
 
         <TextView
-            android:id="@+id/textView24"
+            android:id="@+id/textViewPe"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView" />
@@ -59,10 +69,10 @@
             android:layout_height="wrap_content"
             android:text="Consumption of energy resources" />
 
-        <com.github.mikephil.charting.charts.HorizontalBarChart
+        <com.github.mikephil.charting.charts.PieChart
             android:id="@+id/graphe_primary"
             android:layout_width="match_parent"
-            android:layout_height="155dp" />
+            android:layout_height="150sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -74,10 +84,13 @@
             android:id="@+id/textView26"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textStyle="bold"
             android:text="Abiotic Depletion Potential (kgSbeq)" />
 
+
+
         <TextView
-            android:id="@+id/textView27"
+            android:id="@+id/textViewAdp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView" />
@@ -88,10 +101,10 @@
             android:layout_height="wrap_content"
             android:text="Evaluates the use of minerals and fossil ressources" />
 
-        <com.github.mikephil.charting.charts.HorizontalBarChart
+        <com.github.mikephil.charting.charts.PieChart
             android:id="@+id/graphe_abiotic"
             android:layout_width="match_parent"
-            android:layout_height="146dp" />
+            android:layout_height="150sp" />
     </LinearLayout>
 
     <Button

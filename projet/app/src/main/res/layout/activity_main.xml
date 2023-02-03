@@ -451,12 +451,6 @@
         android:layout_height="wrap_content"
         android:text="@string/BoutonLancer" />
 
-    <Button
-        android:id="@+id/buttonGraphes"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/BoutonGraphe" />
-
 
 
 </LinearLayout>
