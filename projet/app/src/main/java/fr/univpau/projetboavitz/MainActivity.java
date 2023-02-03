@@ -85,16 +85,8 @@ public class MainActivity extends AppCompatActivity {
                     throw new RuntimeException(e);
                 }
                 System.out.println("Sortie de l'api : " + JsonRep);
-
-
-            }
-        });
-
-        Button Bouton_Graphe = (Button) findViewById(R.id.buttonGraphes);
-        Bouton_Graphe.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-
                 go_to_Graph();
+
             }
         });
 
